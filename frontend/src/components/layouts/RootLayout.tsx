@@ -1,0 +1,53 @@
+import { Outlet } from 'react-router-dom'
+
+import { AppFooter } from '../AppFooter'
+import { TitleBar } from '../TitleBar'
+import { useTranslation } from '@/i18n'
+import { DeviceNodeSync } from '../pairing/DeviceNodeSync'
+import { NearbyInviteDialog } from '../pairing/NearbyInviteDialog'
+import { NearbyPairRequestDialog } from '../pairing/NearbyPairRequestDialog'
+import { NearbyVerificationDialog } from '../pairing/NearbyVerificationDialog'
+import { PairedInviteDialog } from '../pairing/PairedInviteDialog'
+import { ReceiverProvider } from '../receiver/ReceiverProvider'
+import { WindowsContextMenuSync } from '../settings/system-tray/context-menu-toggle'
+import { useAutostartFirstRun } from '../../hooks/useAutostartFirstRun'
+import { useTrayLabels } from '../../hooks/useTrayLabels'
+import {
+	IS_ANDROID,
+	IS_LINUX,
+	IS_MACOS,
+	IS_PAIRING_CAPABLE,
+	IS_WEB,
+	IS_WINDOWS,
+} from '@/lib/platform'
+
+export function RootLayout() {
+	const { t } = useTranslation('common')
+	useTrayLabels()
+	useAutostartFirstRun()
+	return (
+		<ReceiverProvider>
+			{IS_WINDOWS && <WindowsContextMenuSync />}
+			{IS_PAIRING_CAPABLE && <DeviceNodeSync />}
+			{IS_PAIRING_CAPABLE && <PairedInviteDialog />}
+			{IS_PAIRING_CAPABLE && <NearbyInviteDialog />}
+			{IS_PAIRING_CAPABLE && <NearbyPairRequestDialog />}
+			{IS_PAIRING_CAPABLE && <NearbyVerificationDialog />}
+			<main
+				className={
+					IS_WEB
+						? 'h-full flex flex-col relative glass-background select-none bg-background'
+						: 'h-dvh min-h-screen flex flex-col relative glass-background select-none bg-background'
+				}
+			>
+				{IS_LINUX && !IS_ANDROID && <TitleBar title={t('appTitle')} />}
+
+				{IS_MACOS && (
+					<div className="absolute w-full h-10 z-10" data-tauri-drag-region />
+				)}
+				<Outlet />
+				<AppFooter />
+			</main>
+		</ReceiverProvider>
+	)
+}
