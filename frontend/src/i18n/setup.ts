@@ -46,9 +46,11 @@ Object.entries(localeFiles).forEach(([path, module]) => {
 const getStoredLanguage = (): string => {
 	try {
 		const stored = localStorage.getItem('altsendme-language')
-		return stored || 'en'
+		// The app's UI is Chinese-first; English (and the other bundled
+		// languages) remain selectable through the in-app switcher.
+		return stored || 'zh-CN'
 	} catch {
-		return 'en'
+		return 'zh-CN'
 	}
 }
 

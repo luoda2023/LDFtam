@@ -299,6 +299,13 @@
 				"savedDescription": "请将此文件附加到你的错误报告。请先检查一遍，因为其中包含 IP 地址、设备 ID、设备名称以及你分享的文件名。",
 				"clear": "清除日志",
 				"clearedTitle": "已清除日志"
+			},
+			"relayStatus": {
+				"showToggle": {
+					"description": "在底部栏显示中继状态指示器，展示当前连接的中继及其地址。",
+					"label": "在底部栏显示中继状态"
+				},
+				"title": "中继"
 			}
 		},
 		"devices": {
@@ -373,7 +380,16 @@
 				"discoverabilityPairedOnlyDesc": "附近的设备可以看到这台设备存在，但看不到其名称。",
 				"discoverabilityOff": "关",
 				"discoverabilityOffDesc": "这台设备不会出现在本地网络中。你依然可以查找并发送到其他设备。"
-			}
+			},
+			"removeConfirmAction": "移除设备",
+			"removeConfirmBody": "该设备将被解除配对。在两台设备之间发送文件之前，你需要使用新的配对码重新配对。",
+			"removeConfirmTitle": "移除 {{name}}？",
+			"trust": "信任",
+			"trustAria": "信任 {{name}}",
+			"trustConfirmAction": "信任设备",
+			"trustConfirmBody": "信任该设备后，它无需再次询问即可向此系统写入任意文件——包括可能有害的文件。请只信任你拥有或能够完全控制的设备。",
+			"trustConfirmTitle": "信任 {{name}}？",
+			"trustFailed": "无法更改信任状态"
 		},
 		"network": {
 			"relay": {
@@ -463,7 +479,10 @@
 		"declinedTitle": "{{sender}} 拒绝了",
 		"declinedBody": "你的请求未被接受",
 		"pairedTitle": "设备已配对",
-		"pairedBody": "{{name}} 现已配对"
+		"pairedBody": "{{name}} 现已配对",
+		"autoAcceptBody": "{{count}} 个文件 · {{size}} · 已自动接受",
+		"autoAcceptBodyNoSize": "{{count}} 个文件 · 已自动接受",
+		"autoAcceptTitle": "正在从 {{sender}} 接收"
 	},
 	"footer": {
 		"relay": {
@@ -541,7 +560,15 @@
 			"error": "什么出了问题",
 			"toggleDetails": "显示详情",
 			"conflicts": "为避免覆盖现有文件，已重命名 {{count}} 个文件。",
-			"remove": "从历史记录移除"
+			"remove": "从历史记录移除",
+			"missingBody": "本次传输的文件已不在 {{path}} 中。传输完成后它可能已被移动或删除。",
+			"missingTitle": "文件已不在原位置",
+			"open": "打开",
+			"openFailed": "无法打开该传输记录",
+			"removeConfirmBody": "此操作会从历史记录中移除该条目。已接收的文件仍保留在这台设备上。",
+			"removeConfirmBodyResumable": "此操作会从历史记录中移除该条目，并释放 {{size}} 残留的未完成数据，之后该传输将无法继续。已接收的文件仍保留在这台设备上。",
+			"removeConfirmTitle": "要移除该传输吗？",
+			"unknownDestination": "其目标位置"
 		},
 		"temp": {
 			"cleared": "已释放空间",

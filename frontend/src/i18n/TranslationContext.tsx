@@ -16,7 +16,7 @@ export const TranslationProvider: React.FC<{ children: ReactNode }> = ({
 
 	useEffect(() => {
 		const handleLanguageChange = () => {
-			const newLang = localStorage.getItem('altsendme-language') || 'en'
+			const newLang = localStorage.getItem('altsendme-language') || 'zh-CN'
 			if (newLang !== language) {
 				setLanguage(newLang)
 				i18next.changeLanguage(newLang)
