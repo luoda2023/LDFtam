@@ -356,14 +356,14 @@ export function Dropzone({
 				>
 					{!hasSelection && (
 						<div className="flex h-full min-h-52 w-full flex-col items-center justify-center space-y-4">
-						<div className="flex justify-center items-center h-16">
-							<div
-								className="flex h-14 w-14 items-center justify-center rounded-full bg-app-gradient shadow-[0_8px_24px_-6px_color-mix(in_srgb,var(--app-gradient-from)_55%,transparent)] transition-transform duration-300 data-active:scale-110"
-								data-active={isDragActive ? 'true' : 'false'}
-							>
-								<Upload className="h-7 w-7 text-primary-foreground" />
+							<div className="flex justify-center items-center h-16">
+								<div
+									className="flex h-14 w-14 items-center justify-center rounded-full bg-app-gradient shadow-[0_8px_24px_-6px_color-mix(in_srgb,var(--app-gradient-from)_55%,transparent)] transition-transform duration-300 data-active:scale-110"
+									data-active={isDragActive ? 'true' : 'false'}
+								>
+									<Upload className="h-7 w-7 text-primary-foreground" />
+								</div>
 							</div>
-						</div>
 
 							<div>
 								<p className=" hidden sm:block text-lg font-medium mb-2 text-accent-foreground">

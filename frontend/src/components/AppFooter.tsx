@@ -7,11 +7,7 @@ import {
 	SettingsIcon,
 } from 'lucide-react'
 import { useTranslation } from '@/i18n'
-import {
-	GITHUB_REPO_LINK,
-	VERSION_DISPLAY,
-	WEBSITE_LINK,
-} from '@/lib/version'
+import { GITHUB_REPO_LINK, VERSION_DISPLAY, WEBSITE_LINK } from '@/lib/version'
 import { Separator } from './ui/separator'
 import { Link } from 'react-router-dom'
 import { handleExternalLinkClick } from '@/lib/openExternalUrl'

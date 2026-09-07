@@ -181,7 +181,6 @@ export function TransferSuccessScreen({
 					{t('common:transfer.done')}
 				</Button>
 			)}
-
 		</div>
 	)
 }
