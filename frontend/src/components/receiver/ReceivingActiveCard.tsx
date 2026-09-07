@@ -56,7 +56,7 @@ export function ReceivingActiveCard({
 				type="button"
 				onClick={onStopReceiving}
 				className="absolute top-0 right-2 sm:right-6 rounded-full font-medium transition-colors not-disabled:not-active:not-data-pressed:before:shadow-none dark:not-disabled:before:shadow-none dark:not-disabled:not-active:not-data-pressed:before:shadow-none"
-				aria-label="Stop receiving"
+				aria-label={t('common:receiver.stopReceiving')}
 			>
 				<Square className="w-4 h-4" fill="currentColor" />
 			</Button>

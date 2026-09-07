@@ -1,5 +1,5 @@
 {
-	"appTitle": "DashBeam",
+	"appTitle": "LD辅助工具",
 	"send": "发送",
 	"webPreview": {
 		"banner": "预览模式 - 文件传输需要桌面应用。",
@@ -581,5 +581,12 @@
 			"toggle": "记录传输",
 			"toggleHint": "关闭后将不再新增条目。已记录的内容将保留，直到你将其清除。"
 		}
+	},
+	"windowControls": {
+		"minimize": "最小化",
+		"maximize": "最大化",
+		"close": "关闭",
+		"toggleSidebar": "切换侧边栏",
+		"toggleFullPath": "切换完整路径"
 	}
 }

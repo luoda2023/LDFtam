@@ -66,7 +66,7 @@ export function LanguageSwitcher(props: ButtonProps) {
 			}}
 		>
 			<ComboboxTrigger
-				aria-label="Select an item"
+				aria-label="选择语言"
 				{...props}
 				className={cn(
 					buttonVariants({ variant: 'outline' }),

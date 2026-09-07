@@ -1,13 +1,12 @@
 import { buttonVariants } from './ui/button'
 import {
 	GithubIcon,
-	GlobeIcon,
 	History as HistoryIcon,
 	MonitorSmartphone,
 	SettingsIcon,
 } from 'lucide-react'
 import { useTranslation } from '@/i18n'
-import { GITHUB_REPO_LINK, VERSION_DISPLAY, WEBSITE_LINK } from '@/lib/version'
+import { GITHUB_REPO_LINK, VERSION_DISPLAY } from '@/lib/version'
 import { Separator } from './ui/separator'
 import { Link } from 'react-router-dom'
 import { handleExternalLinkClick } from '@/lib/openExternalUrl'
@@ -21,12 +20,7 @@ const CONTACTS = [
 	{
 		link: GITHUB_REPO_LINK,
 		icon: <GithubIcon />,
-		'aria-label': 'Github source code',
-	},
-	{
-		link: WEBSITE_LINK,
-		icon: <GlobeIcon />,
-		'aria-label': 'DashBeam website',
+		'aria-label': '源码仓库',
 	},
 ]
 

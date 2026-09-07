@@ -209,7 +209,7 @@ export function Dropzone({
 					<div
 						className="font-medium cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center"
 						onClick={onToggleFullPath}
-						title="Click to toggle full path"
+						title={t('common:windowControls.toggleFullPath')}
 					>
 						{displayName}
 						<span className="-mr-2 hidden sm:block ">
@@ -432,7 +432,9 @@ export function Dropzone({
 																					onRemoveSelectedPath(path)
 																				}}
 																				className="absolute right-2 top-2 z-10 rounded-full border bg-background p-1 text-muted-foreground opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
-																				aria-label={`Remove ${fileName}`}
+																				aria-label={t(
+																					'common:sender.removeFromSelection'
+																				)}
 																			>
 																				<X className="h-3.5 w-3.5" />
 																			</button>

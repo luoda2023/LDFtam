@@ -1,12 +1,14 @@
 import { getCurrentWindow } from '@/lib/platform-api'
 import { Minus, X } from 'lucide-react'
 import { IS_TAURI } from '@/lib/platform'
+import { useTranslation } from '@/i18n'
 
 interface TitleBarProps {
 	title?: string
 }
 
-export const TitleBar = ({ title = 'ALT-SENDME' }: TitleBarProps) => {
+export const TitleBar = ({ title }: TitleBarProps) => {
+	const { t } = useTranslation()
 	if (!IS_TAURI) {
 		return null
 	}
@@ -34,8 +36,8 @@ export const TitleBar = ({ title = 'ALT-SENDME' }: TitleBarProps) => {
 					type="button"
 					onClick={handleMinimize}
 					className="window-control-btn"
-					aria-label="Minimize"
-					title="Minimize"
+					aria-label={t('common:windowControls.minimize')}
+					title={t('common:windowControls.minimize')}
 				>
 					<Minus className="w-4 h-4" />
 				</button>
@@ -43,8 +45,8 @@ export const TitleBar = ({ title = 'ALT-SENDME' }: TitleBarProps) => {
 					type="button"
 					onClick={handleClose}
 					className="window-control-btn close"
-					aria-label="Close"
-					title="Close"
+					aria-label={t('common:windowControls.close')}
+					title={t('common:windowControls.close')}
 				>
 					<X className="w-4 h-4" />
 				</button>

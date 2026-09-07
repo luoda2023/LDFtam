@@ -2,6 +2,7 @@ import { getCurrentWindow } from '@/lib/platform-api'
 import type React from 'react'
 import { IS_MACOS, IS_TAURI } from '@/lib/platform'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/i18n'
 
 interface CustomTitleBarProps {
 	children?: React.ReactNode
@@ -40,6 +41,7 @@ const CustomTitleBar: React.FC<CustomTitleBarProps> = ({
 }
 
 const WindowControls: React.FC = () => {
+	const { t } = useTranslation()
 	const minimize = async () => {
 		try {
 			const window = await getCurrentWindow()
@@ -73,22 +75,22 @@ const WindowControls: React.FC = () => {
 				type="button"
 				onClick={minimize}
 				className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"
-				title="Minimize"
-				aria-label="Minimize window"
+				title={t('common:windowControls.minimize')}
+				aria-label={t('common:windowControls.minimize')}
 			/>
 			<button
 				type="button"
 				onClick={maximize}
 				className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors"
-				title="Maximize"
-				aria-label="Maximize window"
+				title={t('common:windowControls.maximize')}
+				aria-label={t('common:windowControls.maximize')}
 			/>
 			<button
 				type="button"
 				onClick={close}
 				className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-				title="Close"
-				aria-label="Close window"
+				title={t('common:windowControls.close')}
+				aria-label={t('common:windowControls.close')}
 			/>
 		</div>
 	)
